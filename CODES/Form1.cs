@@ -16,5 +16,24 @@ namespace CODES
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            Form2 signInForm = new Form2();
+            signInForm.Show();  
+            this.Hide();
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            Form3 signUpForm = new Form3();
+            signUpForm.Show(); 
+            this.Hide();
+        }
     }
 }
