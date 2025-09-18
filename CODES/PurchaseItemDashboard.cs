@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace CODES
 {
-    public partial class Form4 : Form
+    public partial class PurchaseItemDashboard : Form
     {
-        public Form4()
+        public PurchaseItemDashboard()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

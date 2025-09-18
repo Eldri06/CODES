@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace CODES
 {
-    public partial class Form3 : Form
+    public partial class AdminDashboard : Form
     {
-        public Form3()
+        public AdminDashboard()
         {
             InitializeComponent();
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

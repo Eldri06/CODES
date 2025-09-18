@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CODES
 {
-    public partial class Form1 : Form
+    public partial class LandingPage : Form
     {
-        public Form1()
+        public LandingPage()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace CODES
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            Form3 signUpForm = new Form3();
+            RegisterPage signUpForm = new RegisterPage();
             signUpForm.Show(); 
             this.Hide();
         }
