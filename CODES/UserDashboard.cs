@@ -12,12 +12,12 @@ namespace CODES
 {
     public partial class UserDashboard : Form
     {
-        private string loggedInUser; // store logged-in username
+        private string loggedInUser; 
 
         public UserDashboard(string username)
         {
             InitializeComponent();
-            loggedInUser = username; // save username for later
+            loggedInUser = username;
         }
 
        
@@ -28,7 +28,7 @@ namespace CODES
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            // ✅ Optional: Show welcome message (make sure you have a label named lblWelcome)
+            
             if (!string.IsNullOrEmpty(loggedInUser))
             {
                

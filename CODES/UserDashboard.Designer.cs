@@ -93,11 +93,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("League Spartan", 34F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(264, 135);
+            this.label2.Location = new System.Drawing.Point(213, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(273, 48);
+            this.label2.Size = new System.Drawing.Size(366, 58);
             this.label2.TabIndex = 15;
             this.label2.Text = "CoDeS Official";
             // 

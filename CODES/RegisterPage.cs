@@ -69,7 +69,7 @@ namespace CODES
                         }
                     }
 
-                    // ✅ Hash password before storing
+                 
                     string hashedPassword = HashPassword(password);
 
                     string insertQuery = "INSERT INTO users (username, email, password_hash, role, status) " +
