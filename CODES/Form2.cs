@@ -96,9 +96,6 @@ namespace CODES
             }
         }
 
-        /// <summary>
-        /// Verifies password by hashing input and comparing to stored hash
-        /// </summary>
         private bool VerifyPassword(string password, string storedHash)
         {
             using (SHA256 sha256 = SHA256.Create())
