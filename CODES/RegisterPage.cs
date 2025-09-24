@@ -19,12 +19,9 @@ namespace CODES
         {
             InitializeComponent();
         }
-
         private void Form3_Load(object sender, EventArgs e)
         {
-
         }
-
         private void btnRegister_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
@@ -50,7 +47,7 @@ namespace CODES
 
             try
             {
-                string connectionString = "server=localhost;port=3307;database=CODES;uid=root;pwd=;";
+                string connectionString = "server=localhost;port=3307;database=codesfinal;uid=root;pwd=;";
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
@@ -100,8 +97,7 @@ namespace CODES
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
-
-        private string HashPassword(string password)
+       private string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
             {
@@ -114,21 +110,18 @@ namespace CODES
                 return builder.ToString();
             }
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Form2 signInForm = new Form2();
             signInForm.Show();
             this.Hide();
         }
-
         private void lblSystemName_Click(object sender, EventArgs e)
         {
             LandingPage LandingForm = new LandingPage();
             LandingForm.Show();
             this.Hide();
         }
-
         private void pbLogo_Click(object sender, EventArgs e)
         {
             LandingPage LandingForm = new LandingPage();

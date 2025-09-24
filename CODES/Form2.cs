@@ -44,7 +44,7 @@ namespace CODES
 
             try
             {
-                string connString = "server=localhost;port=3307;database=CODES;uid=root;pwd=;";
+                string connString = "server=localhost;port=3307;database=codesfinal;uid=root;pwd=;";
                 using (MySqlConnection conn = new MySqlConnection(connString))
                 {
                     conn.Open();
@@ -57,6 +57,7 @@ namespace CODES
                         {
                             if (reader.Read())
                             {
+                                long userId = reader.GetInt64("id"); // ✅ Get userId from DB
                                 string storedHash = reader.GetString("password_hash");
                                 string role = reader.GetString("ROLE");
 
@@ -67,11 +68,14 @@ namespace CODES
                                     if (role == "admin")
                                     {
                                         AdminDashboard adminForm = new AdminDashboard();
+                                        adminForm.StartPosition = FormStartPosition.CenterScreen;
                                         adminForm.Show();
                                     }
                                     else
                                     {
-                                        UserDashboard userForm = new UserDashboard(username);
+                                        // ✅ Pass both username & userId to UserDashboard
+                                        UserDashboard userForm = new UserDashboard(username, userId);
+                                        userForm.StartPosition = FormStartPosition.CenterScreen;
                                         userForm.Show();
                                     }
 
@@ -105,7 +109,6 @@ namespace CODES
                 return hashedInput == storedHash;
             }
         }
-        
 
         private void btnRegister_Click(object sender, EventArgs e)
         {

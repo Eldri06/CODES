@@ -7,60 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace CODES
 {
     public partial class UserDashboard : Form
     {
-        private string loggedInUser; 
-
-        public UserDashboard(string username)
+        private string loggedInUser;
+        private long loggedInUserId;
+        public UserDashboard(string username, long userId)
         {
             InitializeComponent();
             loggedInUser = username;
+            loggedInUserId = userId;
         }
-
-       
         public UserDashboard()
         {
             InitializeComponent();
         }
-
-        private void Form4_Load(object sender, EventArgs e)
-        {
-            
-            if (!string.IsNullOrEmpty(loggedInUser))
-            {
-               
-            }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnViewItems_Click(object sender, EventArgs e)
         {
-            PurchaseItemDashboard PurchaseForm = new PurchaseItemDashboard();
-            PurchaseForm.Show();
+            PurchaseItemDashboard purchaseForm = new PurchaseItemDashboard(loggedInUserId);
+            purchaseForm.StartPosition = FormStartPosition.CenterScreen;
+            purchaseForm.Show();
             this.Hide();
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
-            LandingPage LandingForm = new LandingPage();
-            LandingForm.Show();
+            LandingPage landingForm = new LandingPage();
+            landingForm.StartPosition = FormStartPosition.CenterScreen;
+            landingForm.Show();
             this.Hide();
         }
     }
