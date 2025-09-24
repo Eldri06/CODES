@@ -92,7 +92,7 @@ namespace CODES
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("✅ Product added successfully.");
+                MessageBox.Show(" Product added successfully.");
                 LoadProducts();
                 ClearInputs();
             }
@@ -167,7 +167,7 @@ namespace CODES
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("✅ Product deleted successfully.");
+                MessageBox.Show("Product deleted successfully.");
                 LoadProducts();
                 ClearInputs();
             }

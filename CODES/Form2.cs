@@ -57,7 +57,7 @@ namespace CODES
                         {
                             if (reader.Read())
                             {
-                                long userId = reader.GetInt64("id"); // ✅ Get userId from DB
+                                long userId = reader.GetInt64("id"); 
                                 string storedHash = reader.GetString("password_hash");
                                 string role = reader.GetString("ROLE");
 
@@ -73,7 +73,7 @@ namespace CODES
                                     }
                                     else
                                     {
-                                        // ✅ Pass both username & userId to UserDashboard
+                               
                                         UserDashboard userForm = new UserDashboard(username, userId);
                                         userForm.StartPosition = FormStartPosition.CenterScreen;
                                         userForm.Show();
