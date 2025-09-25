@@ -46,6 +46,7 @@
             // 
             // lblSystemName
             // 
+            this.lblSystemName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSystemName.AutoSize = true;
             this.lblSystemName.BackColor = System.Drawing.Color.Transparent;
             this.lblSystemName.Font = new System.Drawing.Font("League Spartan", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -59,6 +60,7 @@
             // 
             // pbLogo
             // 
+            this.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbLogo.BackColor = System.Drawing.Color.Transparent;
             this.pbLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbLogo.BackgroundImage")));
             this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -71,6 +73,7 @@
             // 
             // lblRegUsername
             // 
+            this.lblRegUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRegUsername.AutoSize = true;
             this.lblRegUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblRegUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -83,6 +86,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.txtUsername.Location = new System.Drawing.Point(338, 212);
             this.txtUsername.Name = "txtUsername";
@@ -91,6 +95,7 @@
             // 
             // lblRegPassword
             // 
+            this.lblRegPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRegPassword.AutoSize = true;
             this.lblRegPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblRegPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -103,6 +108,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.txtPassword.Location = new System.Drawing.Point(338, 283);
             this.txtPassword.Name = "txtPassword";
@@ -112,6 +118,7 @@
             // 
             // lblRegConfirmPassword
             // 
+            this.lblRegConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRegConfirmPassword.AutoSize = true;
             this.lblRegConfirmPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblRegConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -124,6 +131,7 @@
             // 
             // txtConfirmPassword
             // 
+            this.txtConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.txtConfirmPassword.Location = new System.Drawing.Point(337, 319);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
@@ -133,6 +141,7 @@
             // 
             // btnRegister
             // 
+            this.btnRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRegister.BackColor = System.Drawing.Color.Gold;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.Black;
@@ -146,6 +155,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.BackColor = System.Drawing.Color.Gold;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
@@ -159,6 +169,7 @@
             // 
             // lblRegEmail
             // 
+            this.lblRegEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRegEmail.AutoSize = true;
             this.lblRegEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblRegEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -171,6 +182,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.txtEmail.Location = new System.Drawing.Point(338, 247);
             this.txtEmail.Name = "txtEmail";

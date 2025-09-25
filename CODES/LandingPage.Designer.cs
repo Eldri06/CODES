@@ -39,6 +39,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("League Spartan", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -52,6 +53,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -63,6 +65,7 @@
             // 
             // btnSignIn
             // 
+            this.btnSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSignIn.BackColor = System.Drawing.Color.Gold;
             this.btnSignIn.Font = new System.Drawing.Font("Myriad Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -76,6 +79,7 @@
             // 
             // btnSignUp
             // 
+            this.btnSignUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSignUp.BackColor = System.Drawing.Color.Gold;
             this.btnSignUp.Font = new System.Drawing.Font("Myriad Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -89,6 +93,7 @@
             // 
             // lblSystemName
             // 
+            this.lblSystemName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSystemName.AutoSize = true;
             this.lblSystemName.BackColor = System.Drawing.Color.Transparent;
             this.lblSystemName.Font = new System.Drawing.Font("League Spartan", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

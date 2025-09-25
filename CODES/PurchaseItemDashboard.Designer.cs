@@ -44,6 +44,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("League Spartan", 26F, System.Drawing.FontStyle.Bold);
@@ -57,6 +58,7 @@
             // 
             // lblSystemName
             // 
+            this.lblSystemName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSystemName.AutoSize = true;
             this.lblSystemName.BackColor = System.Drawing.Color.Transparent;
             this.lblSystemName.Font = new System.Drawing.Font("League Spartan", 26F, System.Drawing.FontStyle.Bold);
@@ -69,6 +71,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -80,6 +83,7 @@
             // 
             // lblRegUsername
             // 
+            this.lblRegUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRegUsername.AutoSize = true;
             this.lblRegUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblRegUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -92,6 +96,7 @@
             // 
             // dgvProducts
             // 
+            this.dgvProducts.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvProducts.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Location = new System.Drawing.Point(130, 172);
@@ -103,6 +108,7 @@
             // 
             // btnViewProducts
             // 
+            this.btnViewProducts.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnViewProducts.BackColor = System.Drawing.Color.Gold;
             this.btnViewProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewProducts.ForeColor = System.Drawing.Color.Black;
@@ -116,6 +122,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,6 +136,7 @@
             // 
             // txtSearchItem
             // 
+            this.txtSearchItem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSearchItem.Location = new System.Drawing.Point(252, 98);
             this.txtSearchItem.Name = "txtSearchItem";
             this.txtSearchItem.Size = new System.Drawing.Size(327, 20);
@@ -136,6 +144,7 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearch.BackColor = System.Drawing.Color.Gold;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Black;

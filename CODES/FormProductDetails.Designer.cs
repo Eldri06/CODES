@@ -50,6 +50,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("League Spartan", 26F, System.Drawing.FontStyle.Bold);
@@ -62,6 +63,7 @@
             // 
             // lblSystemName
             // 
+            this.lblSystemName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSystemName.AutoSize = true;
             this.lblSystemName.BackColor = System.Drawing.Color.Transparent;
             this.lblSystemName.Font = new System.Drawing.Font("League Spartan", 26F, System.Drawing.FontStyle.Bold);
@@ -74,6 +76,7 @@
             // 
             // pbProductImage
             // 
+            this.pbProductImage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbProductImage.BackColor = System.Drawing.Color.Transparent;
             this.pbProductImage.Location = new System.Drawing.Point(333, 72);
             this.pbProductImage.Name = "pbProductImage";
@@ -84,6 +87,7 @@
             // 
             // lblRegUsername
             // 
+            this.lblRegUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRegUsername.AutoSize = true;
             this.lblRegUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblRegUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -96,6 +100,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -108,6 +113,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -120,6 +126,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -132,6 +139,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -144,6 +152,7 @@
             // 
             // btnConfirmPurchase
             // 
+            this.btnConfirmPurchase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConfirmPurchase.BackColor = System.Drawing.Color.Gold;
             this.btnConfirmPurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmPurchase.ForeColor = System.Drawing.Color.Black;
@@ -157,6 +166,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClose.BackColor = System.Drawing.Color.Gold;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
@@ -170,6 +180,7 @@
             // 
             // lblProductName
             // 
+            this.lblProductName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblProductName.AutoSize = true;
             this.lblProductName.BackColor = System.Drawing.Color.Transparent;
             this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,6 +193,7 @@
             // 
             // lblPrice
             // 
+            this.lblPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPrice.AutoSize = true;
             this.lblPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -193,6 +205,7 @@
             // 
             // lblStock
             // 
+            this.lblStock.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStock.AutoSize = true;
             this.lblStock.BackColor = System.Drawing.Color.Transparent;
             this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,6 +217,7 @@
             // 
             // lblTotal
             // 
+            this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotal.AutoSize = true;
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -215,6 +229,7 @@
             // 
             // nudQuantity
             // 
+            this.nudQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nudQuantity.Location = new System.Drawing.Point(330, 322);
             this.nudQuantity.Name = "nudQuantity";
             this.nudQuantity.Size = new System.Drawing.Size(120, 20);
