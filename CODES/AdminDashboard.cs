@@ -188,6 +188,12 @@ namespace CODES
             tf.Show();
         }
 
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            ReportsForm reportsForm = new ReportsForm();
+            reportsForm.Show();
+        }
+
         private void btnBrowseImage_Click_1(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
