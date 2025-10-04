@@ -46,14 +46,10 @@
             this.btnViewItems = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.panelButtons = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panelMain.SuspendLayout();
-            this.panelButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -122,7 +118,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.panel1.BackColor = System.Drawing.Color.PapayaWhip;
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -132,7 +128,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 80);
+            this.panel1.Size = new System.Drawing.Size(800, 66);
             this.panel1.TabIndex = 17;
             // 
             // button4
@@ -234,44 +230,16 @@
             this.label5.TabIndex = 19;
             this.label5.Text = "for merchandise transactions.";
             // 
-            // panelMain
-            // 
-            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            this.panelMain.Controls.Add(this.pictureBox3);
-            this.panelMain.Controls.Add(this.pictureBox2);
-            this.panelMain.Controls.Add(this.label5);
-            this.panelMain.Controls.Add(this.label4);
-            this.panelMain.Controls.Add(this.label3);
-            this.panelMain.Controls.Add(this.label2);
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 80);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Padding = new System.Windows.Forms.Padding(50);
-            this.panelMain.Size = new System.Drawing.Size(1000, 420);
-            this.panelMain.TabIndex = 18;
-            // 
-            // panelButtons
-            // 
-            this.panelButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.panelButtons.Controls.Add(this.btnViewItems);
-            this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtons.Location = new System.Drawing.Point(0, 500);
-            this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Padding = new System.Windows.Forms.Padding(50);
-            this.panelButtons.Size = new System.Drawing.Size(1000, 100);
-            this.panelButtons.TabIndex = 19;
-            // 
             // btnViewItems
             // 
-            this.btnViewItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.btnViewItems.FlatAppearance.BorderSize = 0;
-            this.btnViewItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewItems.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewItems.ForeColor = System.Drawing.Color.White;
-            this.btnViewItems.Location = new System.Drawing.Point(400, 20);
+            this.btnViewItems.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnViewItems.BackColor = System.Drawing.Color.Gold;
+            this.btnViewItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewItems.ForeColor = System.Drawing.Color.Black;
+            this.btnViewItems.Location = new System.Drawing.Point(332, 320);
             this.btnViewItems.Name = "btnViewItems";
-            this.btnViewItems.Size = new System.Drawing.Size(200, 50);
-            this.btnViewItems.TabIndex = 0;
+            this.btnViewItems.Size = new System.Drawing.Size(139, 39);
+            this.btnViewItems.TabIndex = 20;
             this.btnViewItems.Text = "View Items";
             this.btnViewItems.UseVisualStyleBackColor = false;
             this.btnViewItems.Click += new System.EventHandler(this.btnViewItems_Click);
@@ -304,24 +272,28 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.panelButtons);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.btnViewItems);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "UserDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "User Dashboard - CoDeS Merchandise System";
+            this.Text = "Form4";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panelMain.ResumeLayout(false);
-            this.panelMain.PerformLayout();
-            this.panelButtons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,7 +318,5 @@
         private System.Windows.Forms.Button btnViewItems;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Panel panelButtons;
     }
 }
