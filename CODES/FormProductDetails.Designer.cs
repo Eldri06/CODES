@@ -257,6 +257,7 @@
             this.Controls.Add(this.pbProductImage);
             this.Controls.Add(this.lblSystemName);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "FormProductDetails";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();

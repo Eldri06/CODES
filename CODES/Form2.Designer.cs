@@ -166,6 +166,7 @@
             this.Controls.Add(this.lblSystemName);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.label2);
+            this.MaximizeBox = false;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";

@@ -172,6 +172,7 @@
             this.Controls.Add(this.txtSearchItem);
             this.Controls.Add(this.lblSystemName);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "PurchaseItemDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form5";

@@ -105,20 +105,20 @@ namespace CODES
                 MessageBox.Show("Not enough stock available.");
                 return;
             }
+
             try
             {
                 using (var conn = new MySqlConnection(connString))
                 {
                     conn.Open();
-
                     using (var transaction = conn.BeginTransaction())
                     {
-                        decimal total = qty * price;                 
                         var cmd = new MySqlCommand(@"
                     INSERT INTO transactions (user_id, total, status, created_at)
-                    VALUES (@uid, @total, 'completed', NOW());
+                    VALUES (@uid, @total, 'pending', NOW());
                     SELECT LAST_INSERT_ID();", conn, transaction);
 
+                        decimal total = qty * price;
                         cmd.Parameters.AddWithValue("@uid", currentUserId);
                         cmd.Parameters.AddWithValue("@total", total);
 
@@ -135,28 +135,15 @@ namespace CODES
                         cmdItem.Parameters.AddWithValue("@total", total);
                         cmdItem.ExecuteNonQuery();
 
-
-                        var cmdStock = new MySqlCommand(
-                            "UPDATE products SET stock = stock - @qty WHERE id=@pid", conn, transaction);
-                        cmdStock.Parameters.AddWithValue("@qty", qty);
-                        cmdStock.Parameters.AddWithValue("@pid", productId);
-                        cmdStock.ExecuteNonQuery();
-
                         transaction.Commit();
                     }
-   
-                    MessageBox.Show(" Product has been recordedd.\n\nThanks for purchasing!",
-                                    "Purchase Complete",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-
-                    this.DialogResult = DialogResult.OK;
+                    MessageBox.Show("📝 Order placed successfully!\n\nWaiting for admin confirmation.");
                     this.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error processing purchase: " + ex.Message);
+                MessageBox.Show("Error processing order: " + ex.Message);
             }
         }
 

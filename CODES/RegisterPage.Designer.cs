@@ -208,6 +208,7 @@
             this.Controls.Add(this.lblRegUsername);
             this.Controls.Add(this.lblSystemName);
             this.Controls.Add(this.pbLogo);
+            this.MaximizeBox = false;
             this.Name = "RegisterPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";

@@ -93,7 +93,6 @@
             // 
             // dgvProducts
             // 
-            this.dgvProducts.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -226,7 +225,7 @@
             // btnAddProduct
             // 
             this.btnAddProduct.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddProduct.BackColor = System.Drawing.Color.Gold;
+            this.btnAddProduct.BackColor = System.Drawing.Color.Lime;
             this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddProduct.ForeColor = System.Drawing.Color.Black;
             this.btnAddProduct.Location = new System.Drawing.Point(194, 329);
@@ -254,7 +253,7 @@
             // btnDeleteProduct
             // 
             this.btnDeleteProduct.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDeleteProduct.BackColor = System.Drawing.Color.Gold;
+            this.btnDeleteProduct.BackColor = System.Drawing.Color.Red;
             this.btnDeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteProduct.ForeColor = System.Drawing.Color.Black;
             this.btnDeleteProduct.Location = new System.Drawing.Point(486, 328);
@@ -320,6 +319,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblSystemName);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form6";
