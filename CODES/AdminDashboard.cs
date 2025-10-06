@@ -207,5 +207,11 @@ namespace CODES
             txtStock.Clear();
             txtImagePath.Clear();
         }
+
+        private void btnViewReports_Click(object sender, EventArgs e)
+        {
+            Reports reportsForm = new Reports();
+            reportsForm.ShowDialog();
+        }
     }
 }

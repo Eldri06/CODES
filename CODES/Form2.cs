@@ -123,5 +123,10 @@ namespace CODES
             LandingForm.Show();
             this.Hide();
         }
+
+        private void panelRight_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

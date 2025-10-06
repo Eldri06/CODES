@@ -2,15 +2,8 @@
 {
     partial class UserDashboard
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,68 +13,343 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+       
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDashboard));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panelHero = new System.Windows.Forms.Panel();
             this.btnViewItems = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panelFeatures = new System.Windows.Forms.Panel();
+            this.panelCard3 = new System.Windows.Forms.Panel();
+            this.lblCard3Desc = new System.Windows.Forms.Label();
+            this.lblCard3Title = new System.Windows.Forms.Label();
+            this.panelCard2 = new System.Windows.Forms.Panel();
+            this.lblCard2Desc = new System.Windows.Forms.Label();
+            this.lblCard2Title = new System.Windows.Forms.Label();
+            this.panelCard1 = new System.Windows.Forms.Panel();
+            this.lblCard1Desc = new System.Windows.Forms.Label();
+            this.lblCard1Title = new System.Windows.Forms.Label();
+            this.lblFeaturesTitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panelHero.SuspendLayout();
+            this.panelFeatures.SuspendLayout();
+            this.panelCard3.SuspendLayout();
+            this.panelCard2.SuspendLayout();
+            this.panelCard1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1200, 80);
+            this.panel1.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.button4.Location = new System.Drawing.Point(1060, 20);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(110, 40);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Logout";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(646, 25);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 35);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Purchase";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            this.button1.Location = new System.Drawing.Point(490, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 35);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Home";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(90, 25);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(152, 30);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "CoDeS Merch";
+            // 
+            // panelHero
+            // 
+            this.panelHero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.panelHero.Controls.Add(this.btnViewItems);
+            this.panelHero.Controls.Add(this.label5);
+            this.panelHero.Controls.Add(this.label4);
+            this.panelHero.Controls.Add(this.label3);
+            this.panelHero.Controls.Add(this.label2);
+            this.panelHero.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHero.Location = new System.Drawing.Point(0, 80);
+            this.panelHero.Name = "panelHero";
+            this.panelHero.Padding = new System.Windows.Forms.Padding(50, 80, 50, 60);
+            this.panelHero.Size = new System.Drawing.Size(1200, 380);
+            this.panelHero.TabIndex = 1;
+            // 
+            // btnViewItems
+            // 
+            this.btnViewItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.btnViewItems.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewItems.FlatAppearance.BorderSize = 0;
+            this.btnViewItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewItems.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.btnViewItems.ForeColor = System.Drawing.Color.White;
+            this.btnViewItems.Location = new System.Drawing.Point(470, 270);
+            this.btnViewItems.Name = "btnViewItems";
+            this.btnViewItems.Size = new System.Drawing.Size(260, 60);
+            this.btnViewItems.TabIndex = 4;
+            this.btnViewItems.Text = "View Items";
+            this.btnViewItems.UseVisualStyleBackColor = false;
+            this.btnViewItems.Click += new System.EventHandler(this.btnViewItems_Click);
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.label5.Location = new System.Drawing.Point(320, 215);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(560, 30);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "for merchandise transactions.";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.label4.Location = new System.Drawing.Point(320, 185);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(560, 30);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "A basic and reliable system";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(250, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(700, 80);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Merchandise";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.label2.Location = new System.Drawing.Point(250, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(700, 80);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "CoDeS Official";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panelFeatures
+            // 
+            this.panelFeatures.AutoScroll = true;
+            this.panelFeatures.BackColor = System.Drawing.Color.White;
+            this.panelFeatures.Controls.Add(this.panelCard3);
+            this.panelFeatures.Controls.Add(this.panelCard2);
+            this.panelFeatures.Controls.Add(this.panelCard1);
+            this.panelFeatures.Controls.Add(this.lblFeaturesTitle);
+            this.panelFeatures.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFeatures.Location = new System.Drawing.Point(0, 460);
+            this.panelFeatures.Name = "panelFeatures";
+            this.panelFeatures.Padding = new System.Windows.Forms.Padding(80, 60, 80, 100);
+            this.panelFeatures.Size = new System.Drawing.Size(1200, 289);
+            this.panelFeatures.TabIndex = 2;
+            this.panelFeatures.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFeatures_Paint);
+            // 
+            // panelCard3
+            // 
+            this.panelCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.panelCard3.Controls.Add(this.lblCard3Desc);
+            this.panelCard3.Controls.Add(this.lblCard3Title);
+            this.panelCard3.Location = new System.Drawing.Point(800, 105);
+            this.panelCard3.Name = "panelCard3";
+            this.panelCard3.Padding = new System.Windows.Forms.Padding(30);
+            this.panelCard3.Size = new System.Drawing.Size(320, 150);
+            this.panelCard3.TabIndex = 3;
+            // 
+            // lblCard3Desc
+            // 
+            this.lblCard3Desc.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblCard3Desc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.lblCard3Desc.Location = new System.Drawing.Point(30, 80);
+            this.lblCard3Desc.Name = "lblCard3Desc";
+            this.lblCard3Desc.Size = new System.Drawing.Size(260, 70);
+            this.lblCard3Desc.TabIndex = 1;
+            this.lblCard3Desc.Text = "Get the best deals and exclusive offers on our products.";
+            // 
+            // lblCard3Title
+            // 
+            this.lblCard3Title.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblCard3Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblCard3Title.Location = new System.Drawing.Point(30, 30);
+            this.lblCard3Title.Name = "lblCard3Title";
+            this.lblCard3Title.Size = new System.Drawing.Size(260, 40);
+            this.lblCard3Title.TabIndex = 0;
+            this.lblCard3Title.Text = "💰 Great Prices";
+            // 
+            // panelCard2
+            // 
+            this.panelCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            this.panelCard2.Controls.Add(this.lblCard2Desc);
+            this.panelCard2.Controls.Add(this.lblCard2Title);
+            this.panelCard2.Location = new System.Drawing.Point(440, 104);
+            this.panelCard2.Name = "panelCard2";
+            this.panelCard2.Padding = new System.Windows.Forms.Padding(30);
+            this.panelCard2.Size = new System.Drawing.Size(320, 150);
+            this.panelCard2.TabIndex = 2;
+            // 
+            // lblCard2Desc
+            // 
+            this.lblCard2Desc.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblCard2Desc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblCard2Desc.Location = new System.Drawing.Point(30, 80);
+            this.lblCard2Desc.Name = "lblCard2Desc";
+            this.lblCard2Desc.Size = new System.Drawing.Size(260, 70);
+            this.lblCard2Desc.TabIndex = 1;
+            this.lblCard2Desc.Text = "Quick and easy checkout process for a smooth shopping experience.";
+            // 
+            // lblCard2Title
+            // 
+            this.lblCard2Title.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblCard2Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblCard2Title.Location = new System.Drawing.Point(30, 30);
+            this.lblCard2Title.Name = "lblCard2Title";
+            this.lblCard2Title.Size = new System.Drawing.Size(260, 40);
+            this.lblCard2Title.TabIndex = 0;
+            this.lblCard2Title.Text = "⚡ Fast Checkout";
+            // 
+            // panelCard1
+            // 
+            this.panelCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.panelCard1.Controls.Add(this.lblCard1Desc);
+            this.panelCard1.Controls.Add(this.lblCard1Title);
+            this.panelCard1.Location = new System.Drawing.Point(80, 104);
+            this.panelCard1.Name = "panelCard1";
+            this.panelCard1.Padding = new System.Windows.Forms.Padding(30);
+            this.panelCard1.Size = new System.Drawing.Size(320, 150);
+            this.panelCard1.TabIndex = 1;
+            // 
+            // lblCard1Desc
+            // 
+            this.lblCard1Desc.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblCard1Desc.ForeColor = System.Drawing.Color.White;
+            this.lblCard1Desc.Location = new System.Drawing.Point(30, 80);
+            this.lblCard1Desc.Name = "lblCard1Desc";
+            this.lblCard1Desc.Size = new System.Drawing.Size(260, 70);
+            this.lblCard1Desc.TabIndex = 1;
+            this.lblCard1Desc.Text = "Browse our wide selection of quality merchandise with ease.";
+            // 
+            // lblCard1Title
+            // 
+            this.lblCard1Title.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblCard1Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            this.lblCard1Title.Location = new System.Drawing.Point(30, 30);
+            this.lblCard1Title.Name = "lblCard1Title";
+            this.lblCard1Title.Size = new System.Drawing.Size(260, 40);
+            this.lblCard1Title.TabIndex = 0;
+            this.lblCard1Title.Text = "🛍️ Easy Shopping";
+            // 
+            // lblFeaturesTitle
+            // 
+            this.lblFeaturesTitle.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
+            this.lblFeaturesTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblFeaturesTitle.Location = new System.Drawing.Point(80, 21);
+            this.lblFeaturesTitle.Name = "lblFeaturesTitle";
+            this.lblFeaturesTitle.Size = new System.Drawing.Size(1040, 50);
+            this.lblFeaturesTitle.TabIndex = 0;
+            this.lblFeaturesTitle.Text = "Why Choose CoDeS?";
+            this.lblFeaturesTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "label6";
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(94, 19);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(150, 27);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "CoDeS Merch";
+            this.label6.Size = new System.Drawing.Size(0, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Visible = false;
             // 
             // mySqlCommand1
             // 
@@ -90,233 +358,59 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("League Spartan", 34F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(213, 139);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(366, 58);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "CoDeS Official";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gold;
-            this.label3.Location = new System.Drawing.Point(282, 184);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(237, 48);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Merchandise";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.PapayaWhip;
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 66);
-            this.panel1.TabIndex = 17;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(688, 25);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 27);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Logout";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(459, 25);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 27);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Profile";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(370, 25);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 27);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Purchase";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(281, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 27);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Home";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(44, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 37);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(320, 247);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 16);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "A basic and reliable system";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label5.Location = new System.Drawing.Point(317, 263);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(170, 16);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "for merchandise transactions.";
-            // 
-            // btnViewItems
-            // 
-            this.btnViewItems.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnViewItems.BackColor = System.Drawing.Color.Gold;
-            this.btnViewItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewItems.ForeColor = System.Drawing.Color.Black;
-            this.btnViewItems.Location = new System.Drawing.Point(332, 320);
-            this.btnViewItems.Name = "btnViewItems";
-            this.btnViewItems.Size = new System.Drawing.Size(139, 39);
-            this.btnViewItems.TabIndex = 20;
-            this.btnViewItems.Text = "View Items";
-            this.btnViewItems.UseVisualStyleBackColor = false;
-            this.btnViewItems.Click += new System.EventHandler(this.btnViewItems_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(29, 228);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(215, 175);
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(558, 228);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(215, 175);
-            this.pictureBox3.TabIndex = 22;
-            this.pictureBox3.TabStop = false;
-            // 
             // UserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnViewItems);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1200, 749);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelFeatures);
+            this.Controls.Add(this.panelHero);
+            this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1216, 766);
             this.Name = "UserDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form4";
+            this.Text = "CoDeS Merch - Dashboard";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panelHero.ResumeLayout(false);
+            this.panelFeatures.ResumeLayout(false);
+            this.panelCard3.ResumeLayout(false);
+            this.panelCard2.ResumeLayout(false);
+            this.panelCard1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label13;
-        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panelHero;
         private System.Windows.Forms.Button btnViewItems;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelFeatures;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private System.Windows.Forms.Label lblFeaturesTitle;
+        private System.Windows.Forms.Panel panelCard1;
+        private System.Windows.Forms.Label lblCard1Title;
+        private System.Windows.Forms.Label lblCard1Desc;
+        private System.Windows.Forms.Panel panelCard2;
+        private System.Windows.Forms.Label lblCard2Desc;
+        private System.Windows.Forms.Label lblCard2Title;
+        private System.Windows.Forms.Panel panelCard3;
+        private System.Windows.Forms.Label lblCard3Desc;
+        private System.Windows.Forms.Label lblCard3Title;
     }
 }

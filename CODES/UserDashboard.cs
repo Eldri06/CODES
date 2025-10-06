@@ -37,5 +37,18 @@ namespace CODES
             landingForm.Show();
             this.Hide();
         }
+
+        private void panelFeatures_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PurchaseItemDashboard purchaseForm = new PurchaseItemDashboard(loggedInUserId);
+            purchaseForm.StartPosition = FormStartPosition.CenterScreen;
+            purchaseForm.Show();
+            this.Hide();
+        }
     }
 }
