@@ -32,5 +32,15 @@ namespace CODES
             signUpForm.Show(); 
             this.Hide();
         }
+
+        private void lblSystemName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDivider_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
