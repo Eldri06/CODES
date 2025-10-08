@@ -38,7 +38,11 @@ namespace CODES
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please enter both username and password.");
+                CustomMessageBox.Show(
+                    "Please enter both username and password to continue.",
+                    "Missing Information",
+                    CustomMessageBox.MessageBoxType.Warning
+                );
                 return;
             }
 
@@ -63,7 +67,11 @@ namespace CODES
 
                                 if (VerifyPassword(password, storedHash))
                                 {
-                                    MessageBox.Show("Login successful!");
+                                    CustomMessageBox.Show(
+                                        $"Welcome back, {username}! Redirecting to your dashboard...",
+                                        "Login Successful",
+                                        CustomMessageBox.MessageBoxType.Success
+                                    );
 
                                     if (role == "admin")
                                     {
@@ -73,7 +81,6 @@ namespace CODES
                                     }
                                     else
                                     {
-                               
                                         UserDashboard userForm = new UserDashboard(username, userId);
                                         userForm.StartPosition = FormStartPosition.CenterScreen;
                                         userForm.Show();
@@ -83,12 +90,20 @@ namespace CODES
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Invalid password. Please try again.");
+                                    CustomMessageBox.Show(
+                                        "The password you entered is incorrect. Please try again.",
+                                        "Invalid Password",
+                                        CustomMessageBox.MessageBoxType.Error
+                                    );
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Username not found or account inactive.");
+                                CustomMessageBox.Show(
+                                    "Username not found or your account has been deactivated. Please contact support.",
+                                    "Account Not Found",
+                                    CustomMessageBox.MessageBoxType.Error
+                                );
                             }
                         }
                     }
@@ -96,7 +111,11 @@ namespace CODES
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                CustomMessageBox.Show(
+                    $"An error occurred while connecting to the database:\n{ex.Message}",
+                    "Connection Error",
+                    CustomMessageBox.MessageBoxType.Error
+                );
             }
         }
 

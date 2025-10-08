@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using OfficeOpenXml;
+using System.IO;
 
 namespace CODES
 {
@@ -18,6 +20,7 @@ namespace CODES
         public Reports()
         {
             InitializeComponent();
+
             cmbReportType.SelectedIndex = 0;
             dtpStartDate.Value = DateTime.Now.AddMonths(-1);
             dtpEndDate.Value = DateTime.Now;
@@ -77,23 +80,10 @@ namespace CODES
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                string query = @"SELECT 
-                                    p.name AS ProductName,
-                                    SUM(ti.qty) AS TotalSold,
-                                    p.price AS UnitPrice,
-                                    SUM(ti.total) AS TotalRevenue,
-                                    COUNT(DISTINCT ti.transaction_id) AS Orders
-                                FROM transaction_items ti
-                                INNER JOIN products p ON ti.product_id = p.id
-                                INNER JOIN transactions t ON ti.transaction_id = t.id
-                                WHERE t.created_at BETWEEN @StartDate AND @EndDate
-                                AND t.status = 'completed'
-                                GROUP BY p.id, p.name, p.price
-                                ORDER BY TotalRevenue DESC";
-
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@StartDate", startDate);
-                cmd.Parameters.AddWithValue("@EndDate", endDate);
+                MySqlCommand cmd = new MySqlCommand("sp_GetSalesReport", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("p_StartDate", startDate);
+                cmd.Parameters.AddWithValue("p_EndDate", endDate);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -110,24 +100,9 @@ namespace CODES
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                string query = @"SELECT 
-                                    id AS ProductID,
-                                    name AS ProductName,
-                                    description AS Description,
-                                    price AS Price,
-                                    stock AS StockQuantity,
-                                    (price * stock) AS TotalValue,
-                                    CASE 
-                                        WHEN stock = 0 THEN 'Out of Stock'
-                                        WHEN stock <= 10 THEN 'Low Stock'
-                                        WHEN stock <= 50 THEN 'Medium Stock'
-                                        ELSE 'Well Stocked'
-                                    END AS StockStatus,
-                                    status AS Availability
-                                FROM products
-                                ORDER BY stock ASC";
+                MySqlCommand cmd = new MySqlCommand("sp_GetInventoryReport", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -158,26 +133,10 @@ namespace CODES
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                string query = @"SELECT 
-                                    t.id AS TransactionID,
-                                    t.created_at AS TransactionDate,
-                                    u.username AS Customer,
-                                    u.email AS Email,
-                                    p.name AS ProductName,
-                                    ti.qty AS Quantity,
-                                    ti.unit_price AS UnitPrice,
-                                    ti.total AS TotalAmount,
-                                    t.status AS Status
-                                FROM transactions t
-                                INNER JOIN users u ON t.user_id = u.id
-                                INNER JOIN transaction_items ti ON t.id = ti.transaction_id
-                                INNER JOIN products p ON ti.product_id = p.id
-                                WHERE t.created_at BETWEEN @StartDate AND @EndDate
-                                ORDER BY t.created_at DESC";
-
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@StartDate", startDate);
-                cmd.Parameters.AddWithValue("@EndDate", endDate);
+                MySqlCommand cmd = new MySqlCommand("sp_GetTransactionReport", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("p_StartDate", startDate);
+                cmd.Parameters.AddWithValue("p_EndDate", endDate);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -194,26 +153,10 @@ namespace CODES
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                string query = @"SELECT 
-                                    u.username AS Customer,
-                                    u.email AS Email,
-                                    u.role AS Role,
-                                    COUNT(DISTINCT t.id) AS TotalOrders,
-                                    SUM(ti.qty) AS TotalItems,
-                                    SUM(t.total) AS TotalSpent,
-                                    MAX(t.created_at) AS LastOrderDate,
-                                    AVG(t.total) AS AverageOrderValue
-                                FROM transactions t
-                                INNER JOIN users u ON t.user_id = u.id
-                                INNER JOIN transaction_items ti ON t.id = ti.transaction_id
-                                WHERE t.created_at BETWEEN @StartDate AND @EndDate
-                                AND t.status = 'completed'
-                                GROUP BY u.id, u.username, u.email, u.role
-                                ORDER BY TotalSpent DESC";
-
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@StartDate", startDate);
-                cmd.Parameters.AddWithValue("@EndDate", endDate);
+                MySqlCommand cmd = new MySqlCommand("sp_GetCustomerOrdersReport", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("p_StartDate", startDate);
+                cmd.Parameters.AddWithValue("p_EndDate", endDate);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -230,24 +173,9 @@ namespace CODES
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                string query = @"SELECT 
-                                    id AS ProductID,
-                                    name AS ProductName,
-                                    description AS Description,
-                                    price AS Price,
-                                    stock AS StockQuantity,
-                                    status AS Availability,
-                                    CASE 
-                                        WHEN stock = 0 THEN 'URGENT - Out of Stock'
-                                        WHEN stock <= 5 THEN 'CRITICAL - Reorder Now'
-                                        WHEN stock <= 10 THEN 'LOW - Monitor Closely'
-                                        ELSE 'Warning Level'
-                                    END AS AlertLevel
-                                FROM products
-                                WHERE stock <= 10
-                                ORDER BY stock ASC";
+                MySqlCommand cmd = new MySqlCommand("sp_GetLowStockReport", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -284,26 +212,11 @@ namespace CODES
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                string query = @"SELECT 
-                                    p.id AS ProductID,
-                                    p.name AS ProductName,
-                                    SUM(ti.qty) AS TotalQuantitySold,
-                                    p.price AS CurrentPrice,
-                                    SUM(ti.total) AS TotalRevenue,
-                                    COUNT(DISTINCT ti.transaction_id) AS NumberOfOrders,
-                                    p.stock AS CurrentStock
-                                FROM transaction_items ti
-                                INNER JOIN products p ON ti.product_id = p.id
-                                INNER JOIN transactions t ON ti.transaction_id = t.id
-                                WHERE t.created_at BETWEEN @StartDate AND @EndDate
-                                AND t.status = 'completed'
-                                GROUP BY p.id, p.name, p.price, p.stock
-                                ORDER BY TotalQuantitySold DESC
-                                LIMIT 20";
-
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@StartDate", startDate);
-                cmd.Parameters.AddWithValue("@EndDate", endDate);
+                MySqlCommand cmd = new MySqlCommand("sp_GetTopSellingProducts", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("p_StartDate", startDate);
+                cmd.Parameters.AddWithValue("p_EndDate", endDate);
+                cmd.Parameters.AddWithValue("p_Limit", 20);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -320,23 +233,10 @@ namespace CODES
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                string query = @"SELECT 
-                                    DATE(t.created_at) AS Date,
-                                    COUNT(DISTINCT t.id) AS TotalOrders,
-                                    SUM(ti.qty) AS TotalItemsSold,
-                                    SUM(t.total) AS DailyRevenue,
-                                    AVG(t.total) AS AverageOrderValue,
-                                    COUNT(DISTINCT t.user_id) AS UniqueCustomers
-                                FROM transactions t
-                                INNER JOIN transaction_items ti ON t.id = ti.transaction_id
-                                WHERE t.created_at BETWEEN @StartDate AND @EndDate
-                                AND t.status = 'completed'
-                                GROUP BY DATE(t.created_at)
-                                ORDER BY Date DESC";
-
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@StartDate", startDate);
-                cmd.Parameters.AddWithValue("@EndDate", endDate);
+                MySqlCommand cmd = new MySqlCommand("sp_GetRevenueSummary", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("p_StartDate", startDate);
+                cmd.Parameters.AddWithValue("p_EndDate", endDate);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -391,6 +291,178 @@ namespace CODES
                 lblTotalRecords.Text = "No data found for selected period";
                 lblTotalRevenue.Text = "";
                 lblAverageValue.Text = "";
+            }
+        }
+
+        private void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+            if (dgvReport.Rows.Count == 0)
+            {
+                MessageBox.Show("No data to export! Please generate a report first.",
+                    "No Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                
+                string reportType = cmbReportType.SelectedItem.ToString();
+                string fileName = GetFileNameForReport(reportType);
+
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Excel Files|*.xlsx";
+                saveDialog.Title = "Save Excel Report";
+                saveDialog.FileName = fileName;
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (ExcelPackage excelPackage = new ExcelPackage())
+                    {
+                        ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add(reportType);
+
+                    
+                        worksheet.Cells[1, 1, 1, dgvReport.Columns.Count].Merge = true;
+                        worksheet.Cells[1, 1].Value = lblReportTitle.Text;
+                        worksheet.Cells[1, 1].Style.Font.Size = 16;
+                        worksheet.Cells[1, 1].Style.Font.Bold = true;
+                        worksheet.Cells[1, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                        worksheet.Cells[1, 1].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                        worksheet.Cells[1, 1].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.FromArgb(0, 51, 102));
+                        worksheet.Cells[1, 1].Style.Font.Color.SetColor(System.Drawing.Color.White);
+                        worksheet.Row(1).Height = 30;
+
+                     
+                        worksheet.Cells[2, 1, 2, dgvReport.Columns.Count].Merge = true;
+                        worksheet.Cells[2, 1].Value = $"Generated on: {DateTime.Now:MMMM dd, yyyy hh:mm tt}";
+                        worksheet.Cells[2, 1].Style.Font.Size = 10;
+                        worksheet.Cells[2, 1].Style.Font.Italic = true;
+                        worksheet.Cells[2, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                        worksheet.Cells[2, 1].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                        worksheet.Cells[2, 1].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.FromArgb(240, 240, 240));
+                        worksheet.Row(2).Height = 20;
+
+                        for (int i = 0; i < dgvReport.Columns.Count; i++)
+                        {
+                            worksheet.Cells[4, i + 1].Value = dgvReport.Columns[i].HeaderText;
+                            worksheet.Cells[4, i + 1].Style.Font.Bold = true;
+                            worksheet.Cells[4, i + 1].Style.Font.Size = 11;
+                            worksheet.Cells[4, i + 1].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                            worksheet.Cells[4, i + 1].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.FromArgb(68, 114, 196));
+                            worksheet.Cells[4, i + 1].Style.Font.Color.SetColor(System.Drawing.Color.White);
+                            worksheet.Cells[4, i + 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                            worksheet.Cells[4, i + 1].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+                        }
+                        worksheet.Row(4).Height = 25;
+
+                        
+                        for (int i = 0; i < dgvReport.Rows.Count; i++)
+                        {
+                            for (int j = 0; j < dgvReport.Columns.Count; j++)
+                            {
+                                var cellValue = dgvReport.Rows[i].Cells[j].Value;
+                                worksheet.Cells[i + 5, j + 1].Value = cellValue?.ToString() ?? "";
+
+                        
+                                if (i % 2 == 0)
+                                {
+                                    worksheet.Cells[i + 5, j + 1].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                                    worksheet.Cells[i + 5, j + 1].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.FromArgb(242, 242, 242));
+                                }
+
+                               
+                                if (dgvReport.Columns[j].HeaderText.Contains("Price") ||
+                                    dgvReport.Columns[j].HeaderText.Contains("Revenue") ||
+                                    dgvReport.Columns[j].HeaderText.Contains("Value") ||
+                                    dgvReport.Columns[j].HeaderText.Contains("Total") ||
+                                    dgvReport.Columns[j].HeaderText.Contains("Spent") ||
+                                    dgvReport.Columns[j].HeaderText.Contains("Average"))
+                                {
+                                    if (decimal.TryParse(cellValue?.ToString(), out decimal numValue))
+                                    {
+                                        worksheet.Cells[i + 5, j + 1].Value = numValue;
+                                        worksheet.Cells[i + 5, j + 1].Style.Numberformat.Format = "₱#,##0.00";
+                                    }
+                                }
+                            }
+                        }
+
+                        
+                        int summaryRow = dgvReport.Rows.Count + 6;
+                        worksheet.Cells[summaryRow, 1, summaryRow, dgvReport.Columns.Count].Merge = true;
+                        worksheet.Cells[summaryRow, 1].Value = "SUMMARY";
+                        worksheet.Cells[summaryRow, 1].Style.Font.Bold = true;
+                        worksheet.Cells[summaryRow, 1].Style.Font.Size = 12;
+                        worksheet.Cells[summaryRow, 1].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                        worksheet.Cells[summaryRow, 1].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.FromArgb(68, 114, 196));
+                        worksheet.Cells[summaryRow, 1].Style.Font.Color.SetColor(System.Drawing.Color.White);
+
+                   
+                        summaryRow++;
+                        worksheet.Cells[summaryRow, 1].Value = lblTotalRecords.Text;
+                        worksheet.Cells[summaryRow, 1].Style.Font.Bold = true;
+                        summaryRow++;
+                        worksheet.Cells[summaryRow, 1].Value = lblTotalRevenue.Text;
+                        worksheet.Cells[summaryRow, 1].Style.Font.Bold = true;
+                        summaryRow++;
+                        worksheet.Cells[summaryRow, 1].Value = lblAverageValue.Text;
+                        worksheet.Cells[summaryRow, 1].Style.Font.Bold = true;
+
+                      
+                        worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+
+                        
+                        for (int col = 1; col <= dgvReport.Columns.Count; col++)
+                        {
+                            if (worksheet.Column(col).Width < 15)
+                                worksheet.Column(col).Width = 15;
+                        }
+
+                       
+                        var dataRange = worksheet.Cells[4, 1, dgvReport.Rows.Count + 4, dgvReport.Columns.Count];
+                        dataRange.Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                        dataRange.Style.Border.Bottom.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                        dataRange.Style.Border.Left.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                        dataRange.Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+
+                        FileInfo fileInfo = new FileInfo(saveDialog.FileName);
+                        excelPackage.SaveAs(fileInfo);
+
+                        MessageBox.Show($"Report exported successfully!\n\nSaved to:\n{saveDialog.FileName}",
+                            "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        System.Diagnostics.Process.Start("explorer.exe", "/select, " + saveDialog.FileName);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error exporting to Excel:\n{ex.Message}",
+                    "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private string GetFileNameForReport(string reportType)
+        {
+            string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+
+            switch (reportType)
+            {
+                case "Sales Report":
+                    return $"SalesReport_{timestamp}.xlsx";
+                case "Product Inventory Report":
+                    return $"InventoryReport_{timestamp}.xlsx";
+                case "Transaction History":
+                    return $"TransactionHistory_{timestamp}.xlsx";
+                case "Customer Orders Report":
+                    return $"CustomerOrdersReport_{timestamp}.xlsx";
+                case "Low Stock Alert":
+                    return $"LowStockAlert_{timestamp}.xlsx";
+                case "Top Selling Products":
+                    return $"TopSellingProducts_{timestamp}.xlsx";
+                case "Revenue Summary":
+                    return $"RevenueSummary_{timestamp}.xlsx";
+                default:
+                    return $"Report_{timestamp}.xlsx";
             }
         }
     }

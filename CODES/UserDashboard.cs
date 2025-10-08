@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 namespace CODES
 {
     public partial class UserDashboard : Form
@@ -50,5 +51,13 @@ namespace CODES
             purchaseForm.Show();
             this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            Profile profileForm = new Profile((int)loggedInUserId, loggedInUser);
+            profileForm.ShowDialog();
+        }
     }
-}
+    }
+

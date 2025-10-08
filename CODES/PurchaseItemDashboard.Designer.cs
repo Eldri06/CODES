@@ -33,6 +33,7 @@
             this.panelSearch = new System.Windows.Forms.Panel();
             this.panelDataGrid = new System.Windows.Forms.Panel();
             this.panelActions = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -184,6 +185,7 @@
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.panelHeader.Controls.Add(this.btnClose);
             this.panelHeader.Controls.Add(this.label1);
             this.panelHeader.Controls.Add(this.lblSystemName);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -230,6 +232,22 @@
             this.panelActions.Size = new System.Drawing.Size(1200, 130);
             this.panelActions.TabIndex = 3;
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(1041, 41);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 40);
+            this.btnClose.TabIndex = 25;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // PurchaseItemDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,5 +291,6 @@
         private System.Windows.Forms.Panel panelSearch;
         private System.Windows.Forms.Panel panelDataGrid;
         private System.Windows.Forms.Panel panelActions;
+        private System.Windows.Forms.Button btnClose;
     }
 }
