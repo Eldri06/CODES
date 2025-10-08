@@ -18,7 +18,7 @@ namespace CODES
         }
         private void PurchaseItemDashboard_Load(object sender, EventArgs e)
         {
-            
+            LoadProducts();
         }
         private void LoadProducts()
         {
@@ -32,7 +32,7 @@ namespace CODES
 
                     dgvProducts.DataSource = dt;
 
-                    
+
                     if (dgvProducts.Columns["id"] != null)
                         dgvProducts.Columns["id"].Visible = false;
 
@@ -43,11 +43,11 @@ namespace CODES
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading products: " + ex.Message);
+                CustomMessageBox.Show("Error loading products: " + ex.Message, "Database Error", CustomMessageBox.MessageBoxType.Error);
             }
         }
 
-      
+
         private void dgvProducts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -74,7 +74,7 @@ namespace CODES
 
         private void label1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnViewProducts_Click_1(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace CODES
         }
 
         private void txtSearchItem_TextChanged(object sender, EventArgs e)
-        {          
+        {
         }
         private void dgvProucts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -94,6 +94,12 @@ namespace CODES
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchValue = txtSearchItem.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchValue))
+            {
+                CustomMessageBox.Show("Please enter a search term.", "Search Required", CustomMessageBox.MessageBoxType.Warning);
+                return;
+            }
 
             try
             {
@@ -109,6 +115,12 @@ namespace CODES
                         da.SelectCommand.Parameters.AddWithValue("@search", "%" + searchValue + "%");
                         var dt = new DataTable();
                         da.Fill(dt);
+
+                        if (dt.Rows.Count == 0)
+                        {
+                            CustomMessageBox.Show($"No products found matching '{searchValue}'.", "No Results", CustomMessageBox.MessageBoxType.Info);
+                        }
+
                         dgvProducts.DataSource = dt;
 
                         if (dgvProducts.Columns["id"] != null)
@@ -122,8 +134,15 @@ namespace CODES
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error searching products: " + ex.Message);
+                CustomMessageBox.Show("Error searching products: " + ex.Message, "Search Error", CustomMessageBox.MessageBoxType.Error);
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            UserDashboard UserForm = new UserDashboard();
+            UserForm.Show();
+            this.Close();
+        }
     }
-    }
+}

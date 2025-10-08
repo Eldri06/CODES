@@ -15,12 +15,15 @@
 
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblReports = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelReportOptions = new System.Windows.Forms.Panel();
+            this.btnExportToExcel = new System.Windows.Forms.Button();
             this.lblReportType = new System.Windows.Forms.Label();
             this.cmbReportType = new System.Windows.Forms.ComboBox();
             this.lblDateRange = new System.Windows.Forms.Label();
@@ -42,8 +45,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             this.panelSummary.SuspendLayout();
             this.SuspendLayout();
-
+            // 
             // panelHeader
+            // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.panelHeader.Controls.Add(this.lblReports);
             this.panelHeader.Controls.Add(this.lblTitle);
@@ -53,28 +57,31 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1200, 80);
             this.panelHeader.TabIndex = 0;
-
+            // 
             // lblReports
+            // 
             this.lblReports.AutoSize = true;
             this.lblReports.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
             this.lblReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
             this.lblReports.Location = new System.Drawing.Point(30, 18);
             this.lblReports.Name = "lblReports";
-            this.lblReports.Size = new System.Drawing.Size(158, 51);
+            this.lblReports.Size = new System.Drawing.Size(162, 51);
             this.lblReports.TabIndex = 0;
             this.lblReports.Text = "Reports";
-
+            // 
             // lblTitle
+            // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(185, 18);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(230, 51);
+            this.lblTitle.Size = new System.Drawing.Size(194, 51);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "& Analytics";
-
+            // 
             // btnClose
+            // 
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.FlatAppearance.BorderSize = 0;
@@ -88,8 +95,9 @@
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-
+            // 
             // panelMain
+            // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
             this.panelMain.Controls.Add(this.panelReportOptions);
             this.panelMain.Controls.Add(this.panelReportDisplay);
@@ -100,9 +108,11 @@
             this.panelMain.Padding = new System.Windows.Forms.Padding(30);
             this.panelMain.Size = new System.Drawing.Size(1200, 670);
             this.panelMain.TabIndex = 1;
-
+            // 
             // panelReportOptions
+            // 
             this.panelReportOptions.BackColor = System.Drawing.Color.White;
+            this.panelReportOptions.Controls.Add(this.btnExportToExcel);
             this.panelReportOptions.Controls.Add(this.lblReportType);
             this.panelReportOptions.Controls.Add(this.cmbReportType);
             this.panelReportOptions.Controls.Add(this.lblDateRange);
@@ -114,18 +124,36 @@
             this.panelReportOptions.Name = "panelReportOptions";
             this.panelReportOptions.Size = new System.Drawing.Size(1140, 120);
             this.panelReportOptions.TabIndex = 0;
-
+            // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.btnExportToExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportToExcel.FlatAppearance.BorderSize = 0;
+            this.btnExportToExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportToExcel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnExportToExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnExportToExcel.Location = new System.Drawing.Point(721, 35);
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(180, 50);
+            this.btnExportToExcel.TabIndex = 7;
+            this.btnExportToExcel.Text = "📊 Export ";
+            this.btnExportToExcel.UseVisualStyleBackColor = false;
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
+            // 
             // lblReportType
+            // 
             this.lblReportType.AutoSize = true;
             this.lblReportType.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblReportType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.lblReportType.Location = new System.Drawing.Point(30, 25);
             this.lblReportType.Name = "lblReportType";
-            this.lblReportType.Size = new System.Drawing.Size(99, 20);
+            this.lblReportType.Size = new System.Drawing.Size(98, 20);
             this.lblReportType.TabIndex = 0;
             this.lblReportType.Text = "Report Type:";
-
+            // 
             // cmbReportType
+            // 
             this.cmbReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbReportType.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.cmbReportType.FormattingEnabled = true;
@@ -141,44 +169,49 @@
             this.cmbReportType.Name = "cmbReportType";
             this.cmbReportType.Size = new System.Drawing.Size(280, 28);
             this.cmbReportType.TabIndex = 1;
-
+            // 
             // lblDateRange
+            // 
             this.lblDateRange.AutoSize = true;
             this.lblDateRange.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblDateRange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.lblDateRange.Location = new System.Drawing.Point(340, 25);
             this.lblDateRange.Name = "lblDateRange";
-            this.lblDateRange.Size = new System.Drawing.Size(95, 20);
+            this.lblDateRange.Size = new System.Drawing.Size(94, 20);
             this.lblDateRange.TabIndex = 2;
             this.lblDateRange.Text = "Date Range:";
-
+            // 
             // dtpStartDate
+            // 
             this.dtpStartDate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpStartDate.Location = new System.Drawing.Point(340, 51);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(150, 25);
             this.dtpStartDate.TabIndex = 3;
-
+            // 
             // lblTo
+            // 
             this.lblTo.AutoSize = true;
             this.lblTo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblTo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.lblTo.Location = new System.Drawing.Point(500, 53);
             this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(25, 20);
+            this.lblTo.Size = new System.Drawing.Size(24, 20);
             this.lblTo.TabIndex = 4;
             this.lblTo.Text = "to";
-
+            // 
             // dtpEndDate
+            // 
             this.dtpEndDate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEndDate.Location = new System.Drawing.Point(535, 51);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(150, 25);
             this.dtpEndDate.TabIndex = 5;
-
+            // 
             // btnGenerateReport
+            // 
             this.btnGenerateReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.btnGenerateReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenerateReport.FlatAppearance.BorderSize = 0;
@@ -192,8 +225,9 @@
             this.btnGenerateReport.Text = "📊 Generate";
             this.btnGenerateReport.UseVisualStyleBackColor = false;
             this.btnGenerateReport.Click += new System.EventHandler(this.btnGenerateReport_Click);
-
+            // 
             // panelReportDisplay
+            // 
             this.panelReportDisplay.BackColor = System.Drawing.Color.White;
             this.panelReportDisplay.Controls.Add(this.lblReportTitle);
             this.panelReportDisplay.Controls.Add(this.dgvReport);
@@ -201,8 +235,9 @@
             this.panelReportDisplay.Name = "panelReportDisplay";
             this.panelReportDisplay.Size = new System.Drawing.Size(1140, 380);
             this.panelReportDisplay.TabIndex = 1;
-
+            // 
             // lblReportTitle
+            // 
             this.lblReportTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.lblReportTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblReportTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
@@ -214,8 +249,9 @@
             this.lblReportTitle.TabIndex = 0;
             this.lblReportTitle.Text = "📈 Report Preview - Select report type and click Generate";
             this.lblReportTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
             // dgvReport
+            // 
             this.dgvReport.AllowUserToAddRows = false;
             this.dgvReport.AllowUserToDeleteRows = false;
             this.dgvReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -223,20 +259,25 @@
             this.dgvReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvReport.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvReport.ColumnHeadersDefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvReport.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
-            this.dgvReport.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.dgvReport.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvReport.ColumnHeadersDefaultCellStyle.Padding = new System.Windows.Forms.Padding(5);
-            this.dgvReport.ColumnHeadersDefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
-            this.dgvReport.ColumnHeadersDefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvReport.ColumnHeadersHeight = 45;
-            this.dgvReport.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dgvReport.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dgvReport.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(80)))), ((int)(((byte)(87)))));
-            this.dgvReport.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(5);
-            this.dgvReport.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
-            this.dgvReport.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(80)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReport.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvReport.EnableHeadersVisualStyles = false;
             this.dgvReport.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(226)))), ((int)(((byte)(230)))));
             this.dgvReport.Location = new System.Drawing.Point(0, 50);
@@ -247,8 +288,9 @@
             this.dgvReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReport.Size = new System.Drawing.Size(1140, 330);
             this.dgvReport.TabIndex = 1;
-
+            // 
             // panelSummary
+            // 
             this.panelSummary.BackColor = System.Drawing.Color.White;
             this.panelSummary.Controls.Add(this.lblTotalRecords);
             this.panelSummary.Controls.Add(this.lblTotalRevenue);
@@ -257,8 +299,9 @@
             this.panelSummary.Name = "panelSummary";
             this.panelSummary.Size = new System.Drawing.Size(1140, 70);
             this.panelSummary.TabIndex = 2;
-
+            // 
             // lblTotalRecords
+            // 
             this.lblTotalRecords.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblTotalRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.lblTotalRecords.Location = new System.Drawing.Point(30, 20);
@@ -267,8 +310,9 @@
             this.lblTotalRecords.TabIndex = 0;
             this.lblTotalRecords.Text = "Total Records: 0";
             this.lblTotalRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
             // lblTotalRevenue
+            // 
             this.lblTotalRevenue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblTotalRevenue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.lblTotalRevenue.Location = new System.Drawing.Point(405, 20);
@@ -277,8 +321,9 @@
             this.lblTotalRevenue.TabIndex = 1;
             this.lblTotalRevenue.Text = "Total Revenue: ₱0.00";
             this.lblTotalRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
             // lblAverageValue
+            // 
             this.lblAverageValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblAverageValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.lblAverageValue.Location = new System.Drawing.Point(780, 20);
@@ -287,8 +332,9 @@
             this.lblAverageValue.TabIndex = 2;
             this.lblAverageValue.Text = "Average Order: ₱0.00";
             this.lblAverageValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
             // Reports
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 750);
@@ -307,6 +353,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             this.panelSummary.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Panel panelHeader;
@@ -329,5 +376,7 @@
         private System.Windows.Forms.Label lblTotalRecords;
         private System.Windows.Forms.Label lblTotalRevenue;
         private System.Windows.Forms.Label lblAverageValue;
+        private System.Windows.Forms.Button btnExportToExcel;
+
     }
 }

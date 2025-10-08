@@ -25,7 +25,6 @@ namespace CODES
 
         private void FormProductDetails_Load(object sender, EventArgs e)
         {
-            
             LoadProductDetails();
         }
 
@@ -58,27 +57,31 @@ namespace CODES
                             if (!reader.IsDBNull(reader.GetOrdinal("image_url")))
                             {
                                 string imagePath = reader["image_url"].ToString();
-                               
                                 string fullPath = System.IO.Path.Combine(Application.StartupPath, imagePath);
 
                                 if (System.IO.File.Exists(fullPath))
                                 {
                                     pbProductImage.Image = Image.FromFile(fullPath);
-                                    pbProductImage.SizeMode = PictureBoxSizeMode.StretchImage; 
+                                    pbProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
                                 }
                                 else
                                 {
                                     pbProductImage.Image = null;
-                                    MessageBox.Show("Image not found at: " + fullPath);
+                                    CustomMessageBox.Show($"Image not found at: {fullPath}", "Image Not Found", CustomMessageBox.MessageBoxType.Warning);
                                 }
                             }
+                        }
+                        else
+                        {
+                            CustomMessageBox.Show("Product not found in the database.", "Product Not Found", CustomMessageBox.MessageBoxType.Error);
+                            this.Close();
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading product: " + ex.Message);
+                CustomMessageBox.Show("Error loading product: " + ex.Message, "Database Error", CustomMessageBox.MessageBoxType.Error);
             }
         }
 
@@ -94,15 +97,22 @@ namespace CODES
         }
 
         private void btnConfirmPurchase_Click(object sender, EventArgs e)
-        {      
+        {
         }
 
         private void btnConfirmPurchase_Click_1(object sender, EventArgs e)
         {
             int qty = (int)nudQuantity.Value;
+
+            if (qty <= 0)
+            {
+                CustomMessageBox.Show("Please select a valid quantity.", "Invalid Quantity", CustomMessageBox.MessageBoxType.Warning);
+                return;
+            }
+
             if (qty > availableStock)
             {
-                MessageBox.Show("Not enough stock available.");
+                CustomMessageBox.Show($"Not enough stock available. Only {availableStock} items in stock.", "Insufficient Stock", CustomMessageBox.MessageBoxType.Warning);
                 return;
             }
 
@@ -137,22 +147,19 @@ namespace CODES
 
                         transaction.Commit();
                     }
-                    MessageBox.Show("📝 Order placed successfully!\n\nWaiting for admin confirmation.");
+                    CustomMessageBox.Show("Order placed successfully!\n\nYour order is now waiting for admin confirmation.", "Order Placed", CustomMessageBox.MessageBoxType.Success);
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error processing order: " + ex.Message);
+                CustomMessageBox.Show("Error processing order: " + ex.Message, "Order Error", CustomMessageBox.MessageBoxType.Error);
             }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            PurchaseItemDashboard purchaseForm = new PurchaseItemDashboard(currentUserId);
-            purchaseForm.StartPosition = FormStartPosition.CenterScreen;
-            purchaseForm.Show();
-
             this.Close();
         }
     }

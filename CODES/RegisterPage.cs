@@ -32,13 +32,13 @@ namespace CODES
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(email) ||
                 string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
             {
-                MessageBox.Show("Please fill in all fields.");
+                CustomMessageBox.Show("Please fill in all fields.", "Validation Error", CustomMessageBox.MessageBoxType.Warning);
                 return;
             }
 
             if (password != confirmPassword)
             {
-                MessageBox.Show("Passwords do not match.");
+                CustomMessageBox.Show("Passwords do not match.", "Password Error", CustomMessageBox.MessageBoxType.Error);
                 txtPassword.Clear();
                 txtConfirmPassword.Clear();
                 txtPassword.Focus();
@@ -61,12 +61,12 @@ namespace CODES
                         long count = Convert.ToInt64(checkCmd.ExecuteScalar());
                         if (count > 0)
                         {
-                            MessageBox.Show("Username or email already exists. Please choose another.");
+                            CustomMessageBox.Show("Username or email already exists. Please choose another.", "Account Exists", CustomMessageBox.MessageBoxType.Warning);
                             return;
                         }
                     }
 
-                 
+
                     string hashedPassword = HashPassword(password);
 
                     string insertQuery = "INSERT INTO users (username, email, password_hash, role, status) " +
@@ -80,24 +80,24 @@ namespace CODES
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Registration successful!");
+                            CustomMessageBox.Show("Registration successful! Welcome to the system.", "Success", CustomMessageBox.MessageBoxType.Success);
                             UserDashboard UserForm = new UserDashboard();
                             UserForm.Show();
                             this.Hide();
                         }
                         else
                         {
-                            MessageBox.Show("Registration failed. Please try again.");
+                            CustomMessageBox.Show("Registration failed. Please try again.", "Registration Error", CustomMessageBox.MessageBoxType.Error);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                CustomMessageBox.Show("An error occurred: " + ex.Message, "System Error", CustomMessageBox.MessageBoxType.Error);
             }
         }
-       private string HashPassword(string password)
+        private string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
             {

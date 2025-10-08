@@ -20,7 +20,7 @@ namespace CODES
             InitializeComponent();
         }
         private void AdminDashboard_Load(object sender, EventArgs e)
-        {          
+        {
         }
         private void LoadProducts()
         {
@@ -40,7 +40,7 @@ namespace CODES
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading products: " + ex.Message);
+                CustomMessageBox.Show("Error loading products: " + ex.Message, "Database Error", CustomMessageBox.MessageBoxType.Error);
             }
         }
         private void dgvProducts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -59,7 +59,7 @@ namespace CODES
             TransactionsForm tf = new TransactionsForm();
             tf.Show();
         }
-   
+
         private void btnBrowseImage_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -74,6 +74,27 @@ namespace CODES
 
         private void btnAddProduct_Click_1(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                string.IsNullOrWhiteSpace(txtDescription.Text) ||
+                string.IsNullOrWhiteSpace(txtPrice.Text) ||
+                string.IsNullOrWhiteSpace(txtStock.Text))
+            {
+                CustomMessageBox.Show("Please fill in all required fields.", "Validation Error", CustomMessageBox.MessageBoxType.Warning);
+                return;
+            }
+
+            if (!decimal.TryParse(txtPrice.Text, out decimal price) || price <= 0)
+            {
+                CustomMessageBox.Show("Please enter a valid price greater than 0.", "Invalid Price", CustomMessageBox.MessageBoxType.Warning);
+                return;
+            }
+
+            if (!int.TryParse(txtStock.Text, out int stock) || stock < 0)
+            {
+                CustomMessageBox.Show("Please enter a valid stock quantity (0 or greater).", "Invalid Stock", CustomMessageBox.MessageBoxType.Warning);
+                return;
+            }
+
             try
             {
                 using (var conn = new MySqlConnection(connString))
@@ -85,20 +106,20 @@ namespace CODES
 
                     cmd.Parameters.AddWithValue("@name", txtName.Text.Trim());
                     cmd.Parameters.AddWithValue("@desc", txtDescription.Text.Trim());
-                    cmd.Parameters.AddWithValue("@price", Convert.ToDecimal(txtPrice.Text));
-                    cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(txtStock.Text));
+                    cmd.Parameters.AddWithValue("@price", price);
+                    cmd.Parameters.AddWithValue("@stock", stock);
                     cmd.Parameters.AddWithValue("@image", txtImagePath.Text.Trim());
 
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show(" Product added successfully.");
+                CustomMessageBox.Show("Product added successfully!", "Success", CustomMessageBox.MessageBoxType.Success);
                 LoadProducts();
                 ClearInputs();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error adding product: " + ex.Message);
+                CustomMessageBox.Show("Error adding product: " + ex.Message, "Database Error", CustomMessageBox.MessageBoxType.Error);
             }
         }
 
@@ -106,7 +127,28 @@ namespace CODES
         {
             if (dgvProducts.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Select a product to update.");
+                CustomMessageBox.Show("Please select a product to update.", "No Selection", CustomMessageBox.MessageBoxType.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                string.IsNullOrWhiteSpace(txtDescription.Text) ||
+                string.IsNullOrWhiteSpace(txtPrice.Text) ||
+                string.IsNullOrWhiteSpace(txtStock.Text))
+            {
+                CustomMessageBox.Show("Please fill in all required fields.", "Validation Error", CustomMessageBox.MessageBoxType.Warning);
+                return;
+            }
+
+            if (!decimal.TryParse(txtPrice.Text, out decimal price) || price <= 0)
+            {
+                CustomMessageBox.Show("Please enter a valid price greater than 0.", "Invalid Price", CustomMessageBox.MessageBoxType.Warning);
+                return;
+            }
+
+            if (!int.TryParse(txtStock.Text, out int stock) || stock < 0)
+            {
+                CustomMessageBox.Show("Please enter a valid stock quantity (0 or greater).", "Invalid Stock", CustomMessageBox.MessageBoxType.Warning);
                 return;
             }
 
@@ -125,20 +167,20 @@ namespace CODES
                     cmd.Parameters.AddWithValue("@id", productId);
                     cmd.Parameters.AddWithValue("@name", txtName.Text.Trim());
                     cmd.Parameters.AddWithValue("@desc", txtDescription.Text.Trim());
-                    cmd.Parameters.AddWithValue("@price", Convert.ToDecimal(txtPrice.Text));
-                    cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(txtStock.Text));
+                    cmd.Parameters.AddWithValue("@price", price);
+                    cmd.Parameters.AddWithValue("@stock", stock);
                     cmd.Parameters.AddWithValue("@image", txtImagePath.Text.Trim());
 
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("✅ Product updated successfully.");
+                CustomMessageBox.Show("Product updated successfully!", "Success", CustomMessageBox.MessageBoxType.Success);
                 LoadProducts();
                 ClearInputs();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error updating product: " + ex.Message);
+                CustomMessageBox.Show("Error updating product: " + ex.Message, "Database Error", CustomMessageBox.MessageBoxType.Error);
             }
         }
 
@@ -146,13 +188,14 @@ namespace CODES
         {
             if (dgvProducts.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Select a product to delete.");
+                CustomMessageBox.Show("Please select a product to delete.", "No Selection", CustomMessageBox.MessageBoxType.Warning);
                 return;
             }
 
             int productId = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["id"].Value);
+            string productName = dgvProducts.SelectedRows[0].Cells["name"].Value.ToString();
 
-            var confirm = MessageBox.Show("Are you sure you want to delete this product?",
+            var confirm = MessageBox.Show($"Are you sure you want to delete '{productName}'?\n\nThis action cannot be undone.",
                 "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (confirm != DialogResult.Yes) return;
@@ -167,13 +210,13 @@ namespace CODES
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("Product deleted successfully.");
+                CustomMessageBox.Show("Product deleted successfully!", "Success", CustomMessageBox.MessageBoxType.Success);
                 LoadProducts();
                 ClearInputs();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error deleting product: " + ex.Message);
+                CustomMessageBox.Show("Error deleting product: " + ex.Message, "Database Error", CustomMessageBox.MessageBoxType.Error);
             }
         }
 
