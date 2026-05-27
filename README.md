@@ -16,7 +16,7 @@ A Windows Forms application built with C# and .NET, featuring product management
 
 ## 📖 About
 
-**CODES System** is a desktop-based application designed to manage products and administrative workflows through an intuitive graphical user interface. It provides multiple forms for handling product details, user profiles, and system operations, with a dedicated admin dashboard for control and monitoring.
+**CODES System** is a desktop-based application designed to manage products and administrative workflows through an intuitive graphical user interface. It provides multiple forms for handling product details, user profiles, and system operations, with a dedicated admin dashboard for monitoring.
 
 ---
 
