@@ -34,7 +34,7 @@ A Windows Forms application built with C# and .NET, featuring product management
 
 **👤 User Interface**
 - Profile management functionality  
-- Interactive forms for smooth navigation  
+- Interactive forms for navigation  
 - Custom message boxes for better user feedback  
 
 **🖥️ Multi-Form Navigation**
