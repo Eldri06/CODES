@@ -4,7 +4,7 @@
 
 **A desktop management system for handling products, users, and administrative operations.**
 
-A Windows Forms application built with C# and .NET, featuring product management, user interfaces, and an admin dashboard.
+A Windows Forms application built with C# and .NET, featuring product management, user interfaces, and admin dashboard.
 
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
